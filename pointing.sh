@@ -11,8 +11,8 @@ echo -e "${BLUE}│        AUTO SCRIPT BY ALAWI VPN          │${NC}"
 echo -e "${BLUE}│   SCRIPT POINTING DOMAIN KE CLOUDFLARE   │${NC}"
 echo -e "${BLUE}└──────────────────────────────────────────┘${NC}"
 echo -e ""
-read -rp "Input Domain Name. Example ( kontol12 ): " -e sub
-read -rp "Input Domain Name. Example ( kontol12 ): " -e ip
+read -rp "Input subdomain: " -e sub
+read -rp "Input ip vps: " -e ip
 
 DOMAIN=alawistore.my.id
 SUB_DOMAIN=${sub}.alawistore.my.id
@@ -43,6 +43,15 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 -H "X-Auth-Key: ${CF_KEY}" \
 -H "Content-Type: application/json" \
 --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+clear
 
+echo -e ""
+echo -e "${BLUE}┌──────────────────────────────────────────┐${NC}"
+echo -e "${BLUE}│   POINTING DOMAIN KE CLOUDFLARE SELESAI  │${NC}"
+echo -e "${BLUE}└──────────────────────────────────────────┘${NC}"
+echo -e ""
 rm -rf pointing.sh
+read -p "$( echo -e "Tekan ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} untuk reboot ") "
+reboot
+
 sleep 1
