@@ -22,10 +22,5 @@ function pointing(){
     unzip pointing.zip
     chmod +x pointing/*
     mv pointing/* /usr/local/sbin
-    rm -rf pointing
     rm -rf pointing.zip
 }
-
-echo -e "system akan reboot setelah 3 detik"
-sleep 3
-reboot
