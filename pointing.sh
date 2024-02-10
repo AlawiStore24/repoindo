@@ -62,7 +62,7 @@ echo -e "${BLUE}│   POINTING DOMAIN KE CLOUDFLARE SELESAI  │${NC}"
 echo -e "${BLUE}└──────────────────────────────────────────┘${NC}"
 echo -e ""
 rm -rf pointing.sh
-read -p "$( echo -e "Tekan [ enter ] untuk reboot ") "
+read -p "Tekan [ enter ] untuk reboot"
 reboot
 
 sleep 1
