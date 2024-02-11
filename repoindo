@@ -16,3 +16,4 @@ deb http://kartolo.sby.datautama.net.id/debian-security/ buster/updates main con
 fi
 
 apt update -y && apt upgrade -y
+rm -rf /root/repoindo
